@@ -1,0 +1,24 @@
+ Check out my game database here!
+
+create table games(id integer primary key, name text, quantity integer, price integer, year integer);
+
+insert into games values(1, "nba street", 4, 50, 2003);
+insert into games values(2, "Def Jam", 3, 60, 2004);
+insert into games values(3, "midnight club", 4, 30,2003);
+insert into games values(5, "mario bros", 20, 25, 1976);
+insert into games values(6, "NBA 2K", 25, 75, 2024);
+insert into games values(7, "remnant 2", 4, 50, 2023);
+insert into games values(8, "GTA VI", 6, 79, 2025);
+insert into games values(9, "Diablo IV", 4, 69, 2023);
+insert into games values(10, "Donkey Kong", 3, 15, 1977);
+insert into games values(4, "HALO", 6, 20, 2000);
+insert into games values(11, "NFS", 8, 59, 20223);
+insert into games values(12, "UFC", 4, 59, 2021);
+insert into games values(13, "The Sims", 4, 85, 2025);
+insert into games values(14, "Smash", 5, 49, 2019);
+insert into games values(15, "Mario Party", 11, 35, 2021);
+
+SELECT * FROM games order by price;
+select max (price) from games;
+select min (price) from games;
+select avg (quantity) from games;

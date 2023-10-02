@@ -1,0 +1,25 @@
+# Assign categories to all the companies as "Large Profit", "Avg Profit", or "Small Profit" based on the revenue earned.
+SELECT company_id, company_name, sum(revenue), employees,
+ CASE
+   WHEN revenue > 400 then "Large Profit"
+   WHEN revenue < 200 then "Small Profit"
+   WHEN revenue > 300 then "Avg Profit"
+   ELSE "MAX"
+ END
+FROM fortune_companies
+GROUP BY revenue
+HAVING employees >2000
+AND revenue >= 150
+
+# Which industries have an average revenue of at least $200 Billion, and what are their avg revenues?
+SELECT industry, employees, ROUND(AVG(revenue),1) as Revenue
+FROM fortune_companies
+GROUP BY employees
+HAVING revenue>=200
+
+
+# Which companies dont have healthcare benefits *and* at least 20 paid time off days
+SELECT company_name, paid_time_off_days as PTO
+FROM fortune_companies
+WHERE paid_time_off_days<20
+AND healthcare_benefits=0

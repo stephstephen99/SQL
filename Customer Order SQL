@@ -1,0 +1,24 @@
+SELECT orderdate
+from BIT_DB.FebSales
+WHERE orderdate between '02/13/19 00:00' and '02/18/19 00:00'
+
+Select location
+from BIT_DB.FebSales
+WHERE orderdate = '02/18/19 01:35'
+
+Select sum(quantity)
+from BIT_DB.FebSales
+where orderdate like'02/18/19%'
+
+Select distinct product
+from BIT_DB.FebSales
+where product like '%batteries%'
+
+Select distinct product, price
+from BIT_DB.FebSales
+where price like '%99'
+
+select product, sum(quantity)
+from BIT_DB.FebSales
+where location like '%Los Angeles%'
+group by product
